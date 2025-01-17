@@ -86,7 +86,7 @@ const displayPhones = (phones,isshowall) =>
       {
         phones =  phones.slice(0,12);
       }
-     
+
  phones.forEach(phone => {
      const phoneCard = document.createElement('div');
      phoneCard.classList = `card card-compact bg-gray-100 drop-shadow-lg p-5`;
@@ -123,13 +123,15 @@ const showDetails = async (id) =>
   const phoneDetails = data.data;
   handleShowDetails(phoneDetails)
 
+
 }
 
 const handleShowDetails = (details) =>
 {
+  console.log(details.mainFeatures.sensors)
+
   // show The Modal
   show_modal.showModal();
-  console.log(details);
   const showModal = document.getElementById('show_modal');
   
   const div = document.createElement('div');
@@ -139,6 +141,10 @@ const handleShowDetails = (details) =>
     <img src="${details.image}" alt="">
     </div>
    <h3 class="text-lg font-bold">${details.name}</h3>
+  <h3 ><span class="text-lg font-bold">Sensors:</span>${details?.mainFeatures?.sensors ? 
+    details.mainFeatures.sensors : 'Sensor Data Not Available Right Now'}</h3>
+           
+
     <h4><span class="font-semibold">Storage: </span>${details?.mainFeatures?.storage}</h4>
     <h4><span class="font-semibold">GPS: </span>${details?.others?.GPS ? details.others.GPS : "No Gps Available" }</h4>
     <p class="py-4">Press ESC key or click the button below to close</p>
