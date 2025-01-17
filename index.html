@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Hunter</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <header>
+        <div class="navbar bg-base-100">
+            <div class="navbar-start">
+              <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M4 6h16M4 12h8m-8 6h16" />
+                  </svg>
+                </div>
+                <ul
+                  tabindex="0"
+                  class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                  <li><a>HOME</a></li>
+                <li><a>MOBILES</a></li>
+               <li><a>LAPTOPS</a></li>
+                </ul>
+              </div>
+              <a class="btn btn-ghost text-xl">HOT GADGETS</a>
+            </div>
+            <div class="navbar-center hidden lg:flex">
+              <ul class="menu menu-horizontal px-1">
+                <li><a>HOME</a></li>
+                <li><a>MOBILES</a></li>
+               <li><a>LAPTOPS</a></li>
+              </ul>
+            </div>
+            <div class="navbar-end">
+              <a class="btn">Sign UP</a>
+            </div>
+          </div>
+    </header>
+    <main>
+        <section class="text-center my-4 bg-gray-700 p-5 w-3/4 m-auto rounded-[20px]" >
+         <div class="space-y-3 pb-4">
+          <h1 class="text-white font-bold text-4xl ">Search Your Device here:</h1>
+         </div>
+          
+            <input
+            id="search-input"
+  type="text"
+  placeholder="Search..."
+  class="input input-bordered input-primary w-full max-w-xs" />
+  <button onclick="handleSearchOption()" class="btn btn-success text-white text-[12px] font-semibold lg:w-auto w-full lg:my-0 my-4">Search</button>
+
+        </section>
+<section>
+  <div id="spinnig-section" class="text-center mt-5 hidden">
+    <span class="loading loading-dots loading-lg"></span>
+
+  </div>
+    <div id="Phones-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-4">
+   </div>
+    
+    <div id="showAllButton" class="ml-3 my-5 hidden">
+        <button onclick="handleShowAllButton()" class="btn btn-primary">Show All</button>
+
+    </div>
+</section>
+
+ <!-- modal section -->
+  <!-- Open the modal using ID.showModal() method -->
+
+<dialog id="show_modal" class="modal lg:modal-bottom modal-middle">
+  
+</dialog>
+
+<!-- no serach match result  -->
+ <div id="no-match-search" class=" flex justify-center items-center hidden">
+  <div role="alert" class="alert alert-info flex justify-center w-3/4">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      class="h-6 w-6 shrink-0 stroke-current">
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+    </svg>
+    <span class="font-bold text-white">No Search Item available.</span>
+  </div>
+ </div>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="js/app.js"></script>
+</body>
+</html>
